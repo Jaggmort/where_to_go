@@ -6,6 +6,7 @@ class Places(models.Model):
     description_long = models.TextField('Длинное описание', blank=True)
     lng = models.FloatField('Долгота', blank=True)
     lat = models.FloatField('Широта', blank=True)
+    places_json = models.CharField('Расшоложение json-файла', max_length=200, blank=True, null=True)
 
     class Meta:
         verbose_name = 'Интересное место'

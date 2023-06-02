@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.templatetags.static import static
+from places.models import Places
 
 def show_places(request):
     places = {
@@ -9,26 +9,14 @@ def show_places(request):
           "type": "Feature",
           "geometry": {
             "type": "Point",
-            "coordinates": [37.62, 55.793676]
+            "coordinates": [place.lng, place.lat]
           },
           "properties": {
-            "title": "«Легенды Москвы",
-            "placeId": "moscow_legends",
-            "detailsUrl": 'static/places/moscow_legends.json'
+            "title": place.title,
+            "placeId": place.pk,
+            "detailsUrl": place.places_json
           }
-        },
-        {
-          "type": "Feature",
-          "geometry": {
-            "type": "Point",
-            "coordinates": [37.64, 55.753676]
-          },
-          "properties": {
-            "title": "Крыши24.рф",
-            "placeId": "roofs24",
-            "detailsUrl": 'static/places/roofs24.json'
-          }
-        }
+        } for place in Places.objects.all()
       ]
     }
     return render(request, 'index.html', {'places': places})
