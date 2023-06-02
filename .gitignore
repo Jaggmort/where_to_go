@@ -138,4 +138,5 @@ dmypy.json
 cython_debug/
 # Project exclude paths
 /afisha
-/media
+/media/
+/where_to_go/
