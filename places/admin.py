@@ -26,4 +26,7 @@ class PlacesAdmin(SortableAdminMixin, admin.ModelAdmin):
 @admin.register(Images)
 class ImagesAdmin(admin.ModelAdmin):
     list_display = ['place', 'sequence_number']
+
+admin.site.site_header = 'Панель управления'
+admin.site.site_title = '"Афиша"'
     
