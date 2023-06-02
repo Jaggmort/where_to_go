@@ -17,6 +17,7 @@ class Places(models.Model):
 class Images(models.Model):
     place = models.ForeignKey(Places, on_delete=models.CASCADE, verbose_name='Интересное место', related_name='place_images')
     image = models.ImageField('Изображени', blank=True, null=True)
+    sequence_number = models.IntegerField('Позиция', default=0)
 
     class Meta:
         verbose_name = 'Изображение'
