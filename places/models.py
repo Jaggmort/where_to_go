@@ -13,3 +13,14 @@ class Places(models.Model):
 
     def __str__(self):
         return f'{self.title}'
+
+class Images(models.Model):
+    place = models.ForeignKey(Places, on_delete=models.CASCADE, verbose_name='Интересное место', related_name='place_images')
+    image = models.ImageField('Изображени', blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Изображение'
+        verbose_name_plural = 'Изображения'
+
+    def __str__(self):
+        return f'{self.place.pk} {self.place}'
