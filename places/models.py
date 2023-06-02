@@ -6,10 +6,12 @@ class Places(models.Model):
     description_long = models.TextField('Длинное описание', blank=True)
     lng = models.FloatField('Долгота', blank=True)
     lat = models.FloatField('Широта', blank=True)
+    sequence_number = models.PositiveIntegerField('Индекс в списке интересных мест', default=0, blank=True, null=True)
 
     class Meta:
         verbose_name = 'Интересное место'
         verbose_name_plural = 'Интересные места'
+        ordering = ['sequence_number']
 
     def __str__(self):
         return f'{self.title}'
@@ -17,11 +19,12 @@ class Places(models.Model):
 class Images(models.Model):
     place = models.ForeignKey(Places, on_delete=models.CASCADE, verbose_name='Интересное место', related_name='place_images')
     image = models.ImageField('Изображени', blank=True, null=True)
-    sequence_number = models.IntegerField('Позиция', default=0)
+    sequence_number = models.PositiveIntegerField('Индекс в списке интересного места', default=0, blank=True, null=True)
 
     class Meta:
         verbose_name = 'Изображение'
         verbose_name_plural = 'Изображения'
+        ordering = ['place']
 
     def __str__(self):
         return f'{self.place.pk} {self.place}'

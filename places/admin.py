@@ -2,9 +2,10 @@ from django.contrib import admin
 from .models import Places, Images
 from django.contrib import admin
 from django.utils.html import format_html
-from django.utils.safestring import mark_safe
+from adminsortable2.admin import SortableTabularInline
+from adminsortable2.admin import SortableAdminMixin
 
-class BookInline(admin.TabularInline):
+class BookInline(SortableTabularInline):
     model = Images
     fields = ['image', 'pl_image', 'sequence_number']
     readonly_fields = ('pl_image', )
@@ -13,8 +14,8 @@ class BookInline(admin.TabularInline):
         return format_html('<img src="{}" height="200px" width="200px" />', image_object.image.url)
 
 @admin.register(Places)
-class PlacesAdmin(admin.ModelAdmin):
-    list_display = ['title', 'lng', 'lat']
+class PlacesAdmin(SortableAdminMixin, admin.ModelAdmin):
+    list_display = ['sequence_number', 'title', 'lng', 'lat']
 
     inlines = [
         BookInline,
@@ -24,4 +25,5 @@ class PlacesAdmin(admin.ModelAdmin):
 
 @admin.register(Images)
 class ImagesAdmin(admin.ModelAdmin):
-    list_display = ['__str__']
+    list_display = ['place', 'sequence_number']
+    
