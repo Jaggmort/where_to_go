@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.utils.html import format_html
 
-from adminsortable2.admin import SortableTabularInline, SortableAdminBase, SortableStackedInline
+from adminsortable2.admin import SortableAdminBase, SortableStackedInline
 
-from .models import Places, Image
+from .models import Place, Image
 
 
 class ImageStackedInline(SortableStackedInline):
@@ -19,7 +19,7 @@ class ImageStackedInline(SortableStackedInline):
         )
 
 
-@admin.register(Places)
+@admin.register(Place)
 class PlaceAdmin(SortableAdminBase, admin.ModelAdmin):
     list_display = ['title', 'lng', 'lat']
 

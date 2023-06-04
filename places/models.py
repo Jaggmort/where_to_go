@@ -3,7 +3,7 @@ from django.db.models import Max
 from tinymce.models import HTMLField
 
 
-class Places(models.Model):
+class Place(models.Model):
     title = models.CharField('Заголовок', max_length=80)
     description_short = models.CharField(
         'Короткое описание',
@@ -24,7 +24,7 @@ class Places(models.Model):
 
 class Image(models.Model):
     place = models.ForeignKey(
-        Places,
+        Place,
         on_delete=models.CASCADE,
         verbose_name='Интересное место',
         related_name='place_images'
