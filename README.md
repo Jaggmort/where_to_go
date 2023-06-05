@@ -47,7 +47,8 @@ python manage.py load_place "json_url"
 
 where `json_url` - path to url file with format:
 
-`{
+```json
+{
     "title": "place_name",
     "imgs": [
             "link_to_first_image", 
@@ -60,7 +61,8 @@ where `json_url` - path to url file with format:
         "lng": "longitude",
         "lat": "latitude"
     }
-}`
+}
+```
 
 ### Start server ###
 
