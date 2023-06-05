@@ -20,7 +20,7 @@ Create .env in main directory
 
 `SECRET_KEY` - Secret Key. Example: `'django-insecure-wi&(nc+cup=@9$m=u1yud^a6$56fjd+1^^yt1j-0d&!@^-43mo'`\
 `DEBUG` - `False`. If u need debug information set to `True`\
-`ALLOWED_HOSTS` - List of allowed host, set to `'127.0.0.1'` for local use.\
+`ALLOWED_HOSTS` - List of allowed hosts, set to `'127.0.0.1'` for local use.\
 `CSRF_COOKIE_SECURE` - `True`\
 `SESSION_COOKIE_SECURE` - `True`\
 `CSRF_TRUSTED_ORIGINS` - Set to web-address of your web-application.\
