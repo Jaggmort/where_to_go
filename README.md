@@ -47,20 +47,20 @@ python manage.py load_place "json_url"
 
 where `json_url` - path to url file with format:
 
-{
-    "title": "place_name",
-    "imgs": [
-            "link_to_first_image", 
-            "link_to_seond_image", 
-            ...
-        ],
-    "description_short": "short description",
-    "description_long": "full description, html-tags included",
-    "coordinates": {
-        "lng": "longitude",
-        "lat": "latitude"
-    }
-}
+{\
+    "title": "place_name",\
+    "imgs": [\
+            "link_to_first_image", \
+            "link_to_seond_image", \
+            ...\
+        ],\
+    "description_short": "short description",\
+    "description_long": "full description, html-tags included",\
+    "coordinates": {\
+        "lng": "longitude",\
+        "lat": "latitude"\
+    }\
+}\
 
 ### Start server ###
 
