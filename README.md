@@ -1,7 +1,7 @@
 # where_to_go? #
 
 It's interactive Moscow map.
-U can check how its look in the web [site](http://jaggmort.pythonanywhere.com/)
+U can check how its look in the web [site](http://jaggmort.pythonanywhere.com/)\
 U can get access to admin/manager forms by this [link](http://jaggmort.pythonanywhere.com/admin/)
 
 ## How to install ##
@@ -18,14 +18,14 @@ pip install -r requirements.txt
 
 Create .env in main directory
 
-`SECRET_KEY` - Secret Key. Example: `'django-insecure-wi&(nc+cup=@9$m=u1yud^a6$56fjd+1^^yt1j-0d&!@^-43mo'`
-`DEBUG` - `False`. If u need debug information set to `True`
-`ALLOWED_HOSTS` - List of allowed host, set to `'127.0.0.1'` for local use.
-`CSRF_COOKIE_SECURE` - `True`
-`SESSION_COOKIE_SECURE` - `True`
-`CSRF_TRUSTED_ORIGINS` - Set to web-address of your web-application.
-`SECURE_HSTS_INCLUDE_SUBDOMAINS` - `True`
-`SECURE_SSL_REDIRECT` - `True`
+`SECRET_KEY` - Secret Key. Example: `'django-insecure-wi&(nc+cup=@9$m=u1yud^a6$56fjd+1^^yt1j-0d&!@^-43mo'`\
+`DEBUG` - `False`. If u need debug information set to `True`\
+`ALLOWED_HOSTS` - List of allowed host, set to `'127.0.0.1'` for local use.\
+`CSRF_COOKIE_SECURE` - `True`\
+`SESSION_COOKIE_SECURE` - `True`\
+`CSRF_TRUSTED_ORIGINS` - Set to web-address of your web-application.\
+`SECURE_HSTS_INCLUDE_SUBDOMAINS` - `True`\
+`SECURE_SSL_REDIRECT` - `True`\
 
 ### Create static files from assets ###
 
