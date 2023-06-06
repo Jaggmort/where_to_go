@@ -8,11 +8,11 @@ from .models import Place, Image
 
 class ImageStackedInline(SortableStackedInline):
     model = Image
-    fields = ('image', 'pl_image')
-    readonly_fields = ('pl_image', )
+    fields = ('image', 'preview_image')
+    readonly_fields = ('preview_image', )
     extra = 0
 
-    def pl_image(self, image_object):
+    def preview_image(self, image_object):
         return format_html(
             '<img src="{}" height="200px" width="200px" />',
             image_object.image.url
