@@ -25,7 +25,7 @@ class Image(models.Model):
         Place,
         on_delete=models.CASCADE,
         verbose_name='Интересное место',
-        related_name='place_images'
+        related_name='images'
     )
     image = models.ImageField('Изображени')
     sequence_number = models.PositiveIntegerField(
