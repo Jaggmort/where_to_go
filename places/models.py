@@ -42,7 +42,3 @@ class Image(models.Model):
 
     def __str__(self):
         return f'{self.place.pk} {self.place}'
-
-    def calculate_default(self):
-        new_default = Image.objects.aggregate(Max('sequence_number')) + 1
-        return new_default
