@@ -7,12 +7,10 @@ class Place(models.Model):
     title = models.CharField('Заголовок', max_length=80)
     description_short = models.TextField(
         'Короткое описание',
-        blank=True,
-        null=True,
     )
-    description_long = HTMLField('Длинное описание', blank=True, null=True)
-    lng = models.FloatField('Долгота', blank=True, null=True)
-    lat = models.FloatField('Широта', blank=True, null=True)
+    description_long = HTMLField('Длинное описание')
+    lng = models.FloatField('Долгота')
+    lat = models.FloatField('Широта')
 
     class Meta:
         verbose_name = 'Интересное место'
@@ -29,7 +27,7 @@ class Image(models.Model):
         verbose_name='Интересное место',
         related_name='place_images'
     )
-    image = models.ImageField('Изображени', blank=True, null=True)
+    image = models.ImageField('Изображени')
     sequence_number = models.PositiveIntegerField(
         'Индекс в списке интересного места',
         default=0,
