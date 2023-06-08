@@ -30,8 +30,13 @@ class Command(BaseCommand):
             title=prepared_place['title'],
             lng=lng,
             lat=lat,
-            description_short=prepared_place.get('description_short', ''),
-            description_long=prepared_place.get('description_long', ''),
+            defaults={
+                'description_short': prepared_place.get(
+                    'description_short',
+                    ''
+                ),
+                'description_long': prepared_place.get('description_long', '')
+            },
         )
 
         if not place_created:
