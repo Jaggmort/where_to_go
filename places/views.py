@@ -7,18 +7,18 @@ from django.urls import reverse
 
 def show_places(request):
     places = {
-        "type": "FeatureCollection",
-        "features": [
+        'type': 'FeatureCollection',
+        'features': [
             {
-                "type": "Feature",
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [place.lng, place.lat]
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [place.lng, place.lat]
                 },
-                "properties": {
-                    "title": place.title,
-                    "placeId": place.pk,
-                    "detailsUrl": reverse('place_view', args=[place.id])
+                'properties': {
+                    'title': place.title,
+                    'placeId': place.pk,
+                    'detailsUrl': reverse('place_view', args=[place.id])
                 }
             } for place in Place.objects.all()
         ]
