@@ -9,18 +9,18 @@ def show_places(request):
     places = {
         "type": "FeatureCollection",
         "features": [
-          {
-            "type": "Feature",
-            "geometry": {
-              "type": "Point",
-              "coordinates": [place.lng, place.lat]
-            },
-            "properties": {
-              "title": place.title,
-              "placeId": place.pk,
-              "detailsUrl": reverse('place_view', args=[place.id])
-            }
-          } for place in Place.objects.all()
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [place.lng, place.lat]
+                },
+                "properties": {
+                    "title": place.title,
+                    "placeId": place.pk,
+                    "detailsUrl": reverse('place_view', args=[place.id])
+                }
+            } for place in Place.objects.all()
         ]
     }
     return render(request, 'index.html', {'places': places})
