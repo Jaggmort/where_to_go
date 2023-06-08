@@ -27,7 +27,7 @@ class Image(models.Model):
         verbose_name='Интересное место',
         related_name='images'
     )
-    image = models.ImageField('Изображени')
+    image = models.ImageField('Изображение')
     sequence_number = models.PositiveIntegerField(
         'Индекс в списке интересного места',
         default=0,
