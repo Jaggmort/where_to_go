@@ -14,7 +14,7 @@ class ImageStackedInline(SortableStackedInline):
 
     def preview_image(self, image):
         return format_html(
-            '<img src="{}" height="200px" width="200px" />',
+            '<img src="{}" height="200px"/>',
             image.image.url
         )
 
