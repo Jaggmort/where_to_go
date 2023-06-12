@@ -40,7 +40,7 @@ class Command(BaseCommand):
         )
 
         if not place_created:
-            print(f'Место "{prepared_place["title"]}" было добавленно ранее.')
+            print(f'Место "{prepared_place["title"]}" было добавлено ранее.')
             return
         print(f'Добавлено место "{prepared_place["title"]}".')
 
