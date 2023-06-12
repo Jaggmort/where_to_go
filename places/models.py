@@ -41,4 +41,4 @@ class Image(models.Model):
         ordering = ['sequence_number']
 
     def __str__(self):
-        return f'{self.place.pk} {self.place}'
+        return f'Изображение №{self.sequence_number} {self.place}'
